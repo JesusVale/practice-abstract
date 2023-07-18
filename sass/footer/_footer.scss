@@ -1,0 +1,68 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.footer{
+    background-color: v.$black;
+    color: v.$white;
+    padding: 3rem 1.2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    @include m.laptop{
+        display: flex;
+        padding: 4rem 10rem;
+    }
+    &__columns{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        flex-grow: 1;
+        @include m.laptop{
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+    }
+    &__column{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    &__title{
+        font-size: 1.7rem;
+        margin: 0;
+    }
+    &__subtitle{
+        margin: 0;
+        font-size: 1.1rem;
+    }
+    &__contact{
+        margin-top: 1rem;
+    }
+    &__links{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        color: inherit;
+    }
+    &__link{
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.1rem;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &__copy{
+        margin-top: 6rem;
+        font-size: 1.4rem;
+        @include m.laptop{
+            margin-top: 13rem;
+            align-self: flex-end;
+        }
+    }
+    &__text{
+        margin: 0;
+    }
+    
+}
